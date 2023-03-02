@@ -1,0 +1,13 @@
+https://github.com/Dax89/electron-sveltekit
+npx degit Dax89/electron-sveltekit --force
+npm run dev: Runs SvelteKit in dev mode
+npm run preview: Runs SvelteKit in production mode
+npm run electron: Runs SvelteKit with electron in dev mode
+npm run build: Runs SvelteKit compiler
+npm run dev:package: Creates an Electron package (you can inspect the contents)
+npm run package: Creates a distributable Electron package
+
+        "electron-builder": "^23.6.0",
+        "electron-reloader": "^1.2.3",
+        "electron-serve": "^1.1.0",
+        "electron-window-state": "^5.0.3",

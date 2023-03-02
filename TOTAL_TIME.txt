@@ -1,0 +1,4 @@
+32 hrs | feb 9-12 - creating todo app using svelte
+44 hrs | feb 13-17 - learning jreport and graphql | generate jsreport pdf
+35 hrs | feb 20-23 - jsreport task and learning sveltekit with electron
+27 hrs | feb 27- match 1 - 

@@ -1,0 +1,17 @@
+//throw new Error('Electron failed to install correctly, please delete node_modules/electron and try installing again');
+  - npm cache verify
+  - rm -r node_modules/electron  # One more time, for good luck
+  - npm install
+  - npm start        # Yayy! It worked!
+
+
+
+---------------------------------------------------
+delete node_modules and package-lock.json
+rm -rf node_modules rm -f package-lock.json
+
+clean npm cache
+npm cache clean --force
+
+try reinstalling
+npm install

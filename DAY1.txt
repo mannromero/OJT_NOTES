@@ -1,0 +1,64 @@
+tanex
+cashering
+
+online
+app desktop offline - automatic sync
+mariadb data existing
+server graphQL
+rxdb - client package offline / automatic sync
+sveltekit - client 
+
+-----------------------------------
+
+electron - javascirpt to desktop
+mysql workbench
+docker
+
+graphQL server
+------------------------------------
+Tutorials Feb. 7-8,
+ 
+Todo App Feb. 9-12
+------------------------------------
+Feb. 13 
+TASK1: LEARN JSREPORT 
+
+   >>>>>>>>>>>>>>>>>>>>
+CMD
+npm install @jsreport/jsreport-cli -g
+mkdir jsreportapp
+cd jsreportapp
+jsreport init
+jsreport configure
+jsreport start
+   >>>>>>>>>>>>>>>>>>>>
+
+template
+report
+create
+
+   >>>>>>>>>>>>>>>>>>>
+const mysql = require('mysql2/promise');
+
+const config = {
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'mydb'
+};
+
+async function beforeRender(req, res) {
+  try {
+    const connection = await mysql.createConnection(config);
+    const [rows, fields] = await connection.query(
+      'select * from data'
+    );
+    console.log(rows)
+    Object.assign(req.data, { properties: rows });
+  } catch (err) {
+    console.error(err);
+    res.statusCode = 500;
+ 
+  }
+}
+    >>>>>>>>>>>>>>>>>>>>>>

@@ -1,0 +1,10 @@
+npm i @envelop/graphql-jit graphql graphql-yoga @graphql-yoga/render-graphiql
+graph-tools/merge // use to merge type and resolver
+
+Two main components of a GraphQL schema
+ 1. typeDefs  - defines the structure of the API
+ 2. resolvers - provide the implementation for the structure defined in typeDefs.
+
+ID 
+   -is often used as a unique identifier for resources in GraphQL
+   -allows you to identify and avoid duplicating data.

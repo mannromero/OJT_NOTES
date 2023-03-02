@@ -1,0 +1,44 @@
+TESTING JSREPORT
+LEARNING SVELTEKIT WITH ELECTRON
+malinis na file structure
+
+// import { onMount } from 'svelte'; // much better if reactive gamitin kaysa nitong old way na onMount
+$: executeCommand(); // this is a sample of reactive. if persons changes, executeCommand will run
+allow-cross-origin 
+
+HTTP proxies
+ -Caching //Proxies can cache frequently accessed web pages, so clients can access them more quickly without requesting them from the destination server every time.
+ -Filtering //Proxies can be configured to block access to specific websites or types of content, providing a level of control and security for users.
+ -Anonymity //Proxies can be used to conceal the identity of the client by masking the client's IP address and other identifying information.
+
+SVELTEKIT WITH ELECTRON
+1. CREATE SVELTEKIT PROJECT
+2. npm install @ptkdev/sveltekit-electron-adapter --save-dev
+3. svelte.config.js
+import adapter from "@ptkdev/sveltekit-electron-adapter";
+
+/** @type {import('@sveltejs/kit').Config} */
+const config = {
+    kit: {
+        adapter: adapter({
+            strict: false,
+        }),
+    },
+};
+
+4. npm run build  //IMPORTANT: Only pages with export const prerender = true; are supported
+5. Create new Electron Forge Project //https://www.electronforge.io/
+ -npm init electron-app@latest my-app
+6. Copy build content from sveltekit project and paste in src folder of electron forge project
+7. Run Electron project with npm run start or generate binary with npm run make
+
+
+
+
+
+
+
+
+
+
+

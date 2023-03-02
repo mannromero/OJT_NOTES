@@ -1,0 +1,52 @@
+JSREPORT CLI & SVELTEKIT- GENERATE PDF AND JSON DATA 
+
+
+          type Message {
+            message: String
+          }
+          type Mutation {
+            generatePDF: Message
+          }
+
+
+                  generatePDF: async () => {
+
+                    try {
+
+                      await new Promise((resolve, reject) => {
+                        
+                        exec('jsreport render --template.content=sample.html --template.engine=handlebars --data=data.json --template.recipe=chrome-pdf --out=new.pdf', (error, stdout, stderr) => {
+                          if (error) {
+                            console.error(`exec error: ${error}`);
+                            reject(error);
+                          } else {
+                            console.log(`stdout: ${stdout}`);
+                            console.error(`stderr: ${stderr}`);
+                            resolve();
+                          }
+                        });
+                      });
+                      return { message: 'PDF generated successfully' };
+                    } catch (error) {
+                      throw new Error(error.message);
+                    }
+                  },
+
+
+  const executeCommand = async () => {
+    const query = `
+    mutation {
+      generatePDF {
+        message
+      }
+    }
+  `;
+  try {
+    const data = await request(endpoint, query);
+    console.log(data.executeCommand.message);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+<button on:click={executeCommand}>Click me</button>

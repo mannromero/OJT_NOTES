@@ -1,0 +1,90 @@
+JSREPORT CLI
+
+npm install jsreport-cli -g
+jsreport init //Initialize a new jsreport project
+---------------------------
+sample.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sample Report</title>
+  </head>
+  <body>
+    <h1>Sample Report</h1>
+    <p>This is a sample report generated using jsreportCLI.</p>
+    <p>Here is some sample data:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each people}}
+        <tr>
+          <td>{{this.name}}</td>
+          <td>{{this.age}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </body>
+</html>
+---------------------------
+data.json
+{
+  "people": [
+    { "name": "Alice", "age": 26 },
+    { "name": "Bob", "age": 32 },
+    { "name": "Charlie", "age": 18 }
+  ]
+}
+
+datatodo - to json
+
+---------------------------
+//generate pdf version of report
+jsreport render --template.content=sample.html --template.engine=handlebars --template.recipe=chrome-pdf --data=data.json --out=sample.pdf
+
+---------------------------------------------------
+import { exec } from 'child_process';
+
+export async function POST(request,response) {
+  try {
+    await new Promise((resolve, reject) => {
+      exec('jsreport render --template.content=sample.html --template.engine=handlebars --template.recipe=chrome-pdf --data=data.json --out=sample.pdf', (error, stdout, stderr) => {
+        if (error) {
+          console.error(`exec error: ${error}`);
+          reject(error);
+        } else {
+          console.log(`stdout: ${stdout}`);
+          console.error(`stderr: ${stderr}`);
+          resolve();
+        }
+      });
+    });
+    
+    return new Response('PDF generated successfully', { status: 200 });
+  } catch (error) {
+    return new Response(error.message, { status: 500 });
+  }
+}
+-------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

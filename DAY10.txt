@@ -1,0 +1,7 @@
+CONTINUETION OF TASK SVELTEKIT WITH ELECTRON
+
+
+==============================================
+the problem is this line of code
+  - //try { require("electron-reloader")(module); } catch {}
+

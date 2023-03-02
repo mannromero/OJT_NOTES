@@ -1,0 +1,5 @@
+JSREPORT CLI
+
+npm install jsreport-cli -g
+jsreport init //Initialize a new jsreport project
+

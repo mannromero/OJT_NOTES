@@ -1,0 +1,31 @@
+Github
+     create repo.
+   - git init
+   - git add .
+   - git commit -m 'Initial Commit'
+   - git remote add origin <paste_origin_link>
+   - git branch -m main
+   - git push origin main
+
+   -git config --global credential.useHttpPath true
+   -git remote set-url origin <new-remote-url> // save to new repo
+   -git remote -v //Verify that the remote origin has been changed 
+   -git status // to track files
+-----------------------------------------------
+FORK AND CLONE
+   -git clone <repo> .
+   -git clone <repo>
+   -cd repository-name
+   -git checkout -b my-descriptive-branch-name
+   -git add .
+   -git commit -m "Add new feature to repository"
+   -git push origin my-descriptive-branch-name
+ ----------------------------------------------
+PULL
+git branch --set-upstream-to=origin/main
+git stash save "Pull message"
+git pull
+git push
+  
+
+

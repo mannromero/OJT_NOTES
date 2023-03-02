@@ -1,0 +1,25 @@
+jsreport - main functionallity for generating report
+jsreport-client - library to communicate with jsreport server
+jsreport server - running server stand alone , actual report done in server
+svelekit - is the resposible to veiw or download the report
+
+CLI
+const jsreport = require('jsreport-core')()
+jsreport.use(require('jsreport-cli')({}))
+const exec = require('child_process').exec;
+jsreport render
+    --template.name=MyTemplate
+    --data=mydata.json
+    --out=myreport.xlsx
+exec('',
+    function (error, stdout, stderr) {
+        console.log('stdout: ' + stdout);
+        console.log('stderr: ' + stderr);
+        if (error !== null) {
+             console.log('exec error: ' + error);
+        }
+    });
+
+
+How to execute shell command in Javascript
+npm cache clean --force

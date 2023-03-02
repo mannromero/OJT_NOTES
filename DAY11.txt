@@ -1,0 +1,13 @@
+LEARNING DOCKER | CONVERT WEB APP TO ELECTRON
+
+DOCKER
+https://docs.docker.com/desktop/install/windows-install/
+
+MYSQL WORKBENCH
+https://dev.mysql.com/downloads/workbench/ 
+
+cmd
+docker run --name mariadb -e MYSQL_ROOT_PASSWORD=123 -p 3307:3306 -d docker.io/library/mariadb:10.5
+
+schema name
+SVPDC-Database
